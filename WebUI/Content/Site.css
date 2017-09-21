@@ -1,0 +1,77 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.NavigationDiv {
+    margin: auto;
+    width: 500px;
+    padding: 10px;
+    text-align: center;
+}
+
+.HomeDiv {
+    margin: auto;
+    height: 600px;
+    width: 800px;
+    padding: 00px;
+    /*border-style: solid;
+    border-color: #808080;*/
+}
+
+.BlockAddContent {
+    margin: auto;
+    margin-top: 5px;
+    height: 60px;
+    width: 450px;
+    padding: 10px;
+    /*border-style: solid;
+    border-color: #808080;*/
+}
+
+.ContetGadget {
+    bottom: 0px;
+    top: 0px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    margin-top: 10%;
+    width: 500px;
+    height: 400px;
+}
+
+.divTable {
+    bottom: 0px;
+    top: 0px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    margin-top: 30px;
+    width: 350px;
+    height: 300px;
+    padding: 20px;
+}
+
+.TextAddLeptop {
+    margin: auto;
+    width: 500px;
+    padding: 10px;
+}
+
+
+
+
+

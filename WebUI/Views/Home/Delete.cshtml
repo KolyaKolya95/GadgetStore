@@ -1,0 +1,16 @@
+﻿@model Domain.Entities.Gadget
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HttpMethodOverride(HttpVerbs.Delete);
+    <input type="submit" value="Delete" />
+    @Html.ActionLink("Back", "Index");
+
+}

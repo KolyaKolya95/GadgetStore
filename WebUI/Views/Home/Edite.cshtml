@@ -1,0 +1,17 @@
+﻿@model Domain.Entities.Gadget
+
+@{
+    ViewBag.Title = "Edite";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edite of "@Model.Name"</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    <input type="submit" value="Save"/>
+    @Html.ActionLink("Back", "Index");
+    
+}
+

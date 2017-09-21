@@ -1,0 +1,32 @@
+﻿@using WebUI.Models
+@model StatisticsModel
+
+
+@{
+    ViewBag.Title = "Statistics";
+}
+
+<div class=" divTable">
+    <div ng-app="TableStatistics" ng-controller="StatisticController">
+            <div class="table-responsive table-Item">
+                <table id="" class="table table-striped table-bordered" ng-table="tableParams" template-pagination="custom/pager">
+                    <thead>
+                        <tr>
+
+                            <th class="text-left">Type</th>
+                            <th class="text-right">Count</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var line in Model.Map)
+                        {
+                            <tr>
+                                <td class="text-left">@line.Key</td>
+                                <td class="text-right">@line.Value</td>
+                            </tr>
+                        }
+                    </tbody>
+              </table>
+      </div>
+</div>

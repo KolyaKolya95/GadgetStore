@@ -1,0 +1,65 @@
+﻿@using WebUI.Models
+@using WebUI.HtmlHelpers
+@model GadgetListViewModel
+
+
+@{
+    ViewBag.Title = "Gadget";
+}
+
+
+<div class="BlockAddContent">
+   
+
+    @using (Html.BeginForm("Create", "Home"))
+    {
+        @Html.TextBox("Name")
+        @Html.TextBox("Type")
+        <input class="btn btn-sm btn-success" type="submit" value="Add"/>
+    }
+
+</div>
+
+<div class=" divTable">
+    <table id="" class="table">
+        <thead>
+            <tr>
+                <th class="text-left">Name</th>
+                <th class="text-left">Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var gadget in Model.Gadgets)
+            {
+                <tr>
+                   <td class="text-left">@gadget.Name</td>
+                    <td class="text-left">@gadget.Type</td>
+
+
+                    <td>
+                        @using (Html.BeginForm("Edite", "Home"))
+                        {
+                            @Html.ActionLink("Edit", "Edite", new { gadget.GadgetId }, new { @class = "btn btn-sm btn-toolbar" })
+                        }
+                    </td>
+
+                    <td>
+                        @using (Html.BeginForm("Delete", "Home"))
+                        {
+                            @Html.Hidden("GadgetId", gadget.GadgetId)
+                            @Html.ActionLink("Delete", "Delete", new { gadget.GadgetId },  new { @class = "btn btn-sm btn-toolbar" })
+                            @*<input class="btn btn-sm btn-warning" type="submit" value="Delete" />*@
+                        }
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
+<div class="btn-group col-xs-push-5">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("Index", new { page = x }))
+</div>
+

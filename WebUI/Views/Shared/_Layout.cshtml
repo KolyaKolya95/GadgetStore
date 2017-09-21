@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <script src="~/Content/AngularController/TableStatistics.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/jquery-3.2.1.js"></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+    <script src="~/Content/AngularController/TableStatistics.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    
+    <div class="NavigationDiv">
+        <input class="btn btn-sm btn-primary" value="Gadgets" onclick="location.href='@Url.Action("Index", "Home")'" />
+        <input class="btn btn-sm btn-primary" value="GadgetsStatistics" onclick="location.href='@Url.Action("StaticsList", "Statistic")'" />
+    </div>
+
+    <div class="HomeDiv">
+
+        <div class="ContetGadget">
+            @if (TempData["message"] != null)
+            {
+                <div class="alert alert-success">@TempData["message"]</div>
+            }
+            @RenderBody()
+        </div>
+
+    </div>
+</body>
+</html>
